@@ -2,13 +2,17 @@ import random
 
 
 def rolls():
+    """
+    This function calculates the dice roll from a pattern of input in format xDy+z.
+    :return: int
+    """
     dice_string = input("Enter which roll you need in format xDy+z: ")
     allowed_dice_types = [3, 4, 6, 8, 10, 12, 20, 100]
     try:
         dice_list = [x for x in dice_string]
         number_of_rolls = int(dice_list[0])
         dice_type = int(dice_list[2])
-        if dice_type not in allowed_dice_types:
+        if dice_type not in allowed_dice_types or dice_list[1] != "D":
             return "Non-existent dice type!"
         increased_result_list = dice_list[4:]
         increase_result = int(''.join(increased_result_list))
