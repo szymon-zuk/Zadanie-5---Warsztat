@@ -23,4 +23,5 @@ def rolls():
     return f"Your roll is: {result}"
 
 
-print(rolls())
+if __name__ == '__main__':
+    rolls()
